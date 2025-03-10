@@ -6,11 +6,11 @@ namespace RobotArenaMechanics
     {
         private readonly int _nextId = 1;
         public int Id { get; set; }
-        public string Head { get; set; } = null;
-        public string Body { get; set; } = null;
-        public string Arms { get; set; } = null;
-        public string Weapon { get; set; } = null;
-        public string Locomotion { get; set; } = null;
+        public string? Head { get; set; } = null;
+        public string? Body { get; set; } = null;
+        public string? Arms { get; set; } = null;
+        public string? Weapon { get; set; } = null;
+        public string? Locomotion { get; set; } = null;
         public RoboWarrior()
         {
             Id = _nextId++;
@@ -46,10 +46,31 @@ namespace RobotArenaMechanics
             if (damageCounter >= 3)
             {
                 return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public bool DidAttackHit()
+        {
+            Random rand = new Random();
+            int chance = rand.Next(2);
+            if (chance == 0)
+            {
+                return false;
             } else
             {
                 return true;
             }
+        }
+        public void SendToBattle()
+        {
+            if (DidAttackHit()) { Head = null; }
+            if (DidAttackHit()) { Body = null; }
+            if (DidAttackHit()) { Arms = null; }
+            if (DidAttackHit()) { Weapon = null; }
+            if (DidAttackHit()) { Locomotion = null; }
         }
     }
 }
