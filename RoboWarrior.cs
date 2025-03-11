@@ -66,6 +66,7 @@ namespace RobotArenaMechanics
         }
         public void SendToBattle()
         {
+            //  Should probably have a timer here
             if (DidAttackHit()) { Head = null; }
             if (DidAttackHit()) { Body = null; }
             if (DidAttackHit()) { Arms = null; }

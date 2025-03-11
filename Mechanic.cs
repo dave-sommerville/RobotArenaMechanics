@@ -9,7 +9,7 @@ namespace RobotArenaMechanics
         public List<String> StockpileArms { get; set; } = new List<string>();
         public List<String> StockpileWeapons { get; set; } = new List<string>();
         public List<String> StockpileLocomotions { get; set; } = new List<string>();
-        // Working hours? 
+        // Working hours/Maintence hours 
         public Mechanic(string name)
         {
             Name = name;
